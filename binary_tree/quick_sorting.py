@@ -10,7 +10,7 @@ import sys
 # Python是有默认递归深度的，1000或者998(有争议)，
 # 所以当测试集数据比较大时需要手动设置递归深度，
 # 但也不是可以随便设置的，跟机器的性能有关
-num = 10000
+num = 100000
 sys.setrecursionlimit(num)
 
 def quickSort(arr, begin, end):
@@ -36,8 +36,6 @@ def quickSort(arr, begin, end):
         quickSort(arr, i+1, end)
 
 
-arr = np.random.randint(1000,size=1000)
+arr = np.random.randint(10000,size=100000)
 quickSort(arr, 0, len(arr) - 1)
 print(arr)
-
-
