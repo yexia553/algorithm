@@ -23,7 +23,7 @@ class SelectedSorting():
         
         return l
 
-    def selected_sorting(self):
+    def sorting(self):
         """
         排序
         """
@@ -48,7 +48,7 @@ class SelectedSorting():
         验证排序算法
         """
         for _ in range(50):
-            self.selected_sorting()
+            self.sorting()
 
 
 sorting = SelectedSorting()
