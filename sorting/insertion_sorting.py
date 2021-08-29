@@ -13,7 +13,7 @@ class SelectedSorting():
         生成一个随机的列表
         """
         l = list()
-        for _ in range(50):
+        for _ in range(random.randint(0, 100)):
             l.append(random.randint(1, 10000))
         
         return l
@@ -24,15 +24,17 @@ class SelectedSorting():
         与冒泡排序非常像，
         """
         unsorted_list = self.generate_list()
-        for i in range(1, len(unsorted_list)-1):
-            for j in range(i, 0, -1):
-                if unsorted_list[j] < unsorted_list[j-1]:
-                    tmp = unsorted_list[j]
-                    unsorted_list[j] = unsorted_list[j-1]
-                    unsorted_list[j-1] = tmp
-                else:
-                    break
-        print(unsorted_list)
+        if len(unsorted_list) < 2:
+            # 数组长度为0或者1就不用排序了
+            print(unsorted_list)
+        else:
+            for i in range(1, len(unsorted_list)):
+                for j in range(i, 0, -1):
+                    if unsorted_list[j] < unsorted_list[j-1]:
+                        tmp = unsorted_list[j]
+                        unsorted_list[j] = unsorted_list[j-1]
+                        unsorted_list[j-1] = tmp
+            print(unsorted_list)
 
     def validation(self):
         """
